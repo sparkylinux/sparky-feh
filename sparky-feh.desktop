@@ -1,0 +1,24 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Wallpaper Manager
+Name[el]=Διαχειριστής του Sparky Wallpaper
+Name[es]=Administrador de Wallpaper
+Name[fr]=Gestionnaire pour Wallpaper
+Name[id]=Manajer Wallpaper
+Name[it]=Gestore Wallpaper
+Name[ja]=Wallpaper マネージャー
+Name[pl]=Wallpaper Menadżer
+Name[pt_BR]=Gerenciador do Wallpaper
+Name[pt_PT]=Gestor Wallpaper
+Name[sv]=Wallpaper-hanteraren
+Name[uk]=Менеджер Wallpaper
+GenericName=Wallpaper Manager
+Comment=Wallpaper Changer
+Comment[pl]=Wybór Tapety
+Exec=/usr/bin/sparky-feh
+Icon=accessories-image-viewer
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Applications;Utility;

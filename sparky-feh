@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Created by Paweł "pavroo" Pijanowski 2016/03/17
+# Copyright 2026 under the GNU GPL3 License
+# This script requires yad to run
+# Last update 2026/03/17
+
+DIALOG700="`which yad` --window-icon=accessories-image-viewer --width=800 --height=600 --center"
+DIALOG="`which yad` --window-icon=accessories-image-viewer --width=450 --height=200 --center"
+TITLE="--always-print-result --dialog-sep --image=accessories-image-viewer --title="
+TEXT="--text="
+TITLETEXT="Pick Wallpaper"
+FILESELECTION="--file "
+FILTER="--file-filter"
+OKEXIT=" --button=Ok:0 --button=Exit:1 "
+MSGBOX=" --button=Ok:0 "
+PREVIEW=" --add-preview"
+
+PICKFILE=`$DIALOG700 $TITLE"Pick Image to set as Wallpaper" $OKEXIT $FILESELECTION $PREVIEW $FILTER="Image File: png, jpg, jpeg|*.png *.jpg *.jpeg"`
+
+if [ "$?" != "0" ]; then
+#	$DIALOG $TITLE"$TITLETEXT" $MSGBOX $TEXT"No changes."
+	exit 0
+
+elif [ "$PICKFILE" = "" ]; then
+#	$DIALOG $TITLE"$TITLETEXT" $MSGBOX $TEXT"No file choosen"
+	exit 0
+
+else
+
+	feh --no-fehbg --bg-scale $PICKFILE
+	#$DIALOG $TITLE"$TITLETEXT" $MSGBOX $TEXT"Done"
+	exit 0
+fi
+
+exit 0
