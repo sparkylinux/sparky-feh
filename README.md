@@ -1,9 +1,7 @@
 Sparky Wallpaper Manager
 This tool lets you change wallpaper on small window manager, such as Openbox, Fluxbox, bspwm, Icewm, Jwm, etc.
-.
-This tool sets a wallpaper temporary, to the present session. 
-.
-To make a wallpaper pernament, set it manually to the window manager startup script. 
+This tool sets a wallpaper, to the present session. 
+It also restores a wallpaper from a feh script to make it pernament. 
 
 Copyright (C) 2026 Paweł Pijanowski, see copyright file.
 
@@ -23,6 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Dependencies:
 -------------
 feh
+grep
+coreutils
 yad
 
 Install:

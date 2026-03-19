@@ -3,7 +3,7 @@
 # Created by Paweł "pavroo" Pijanowski 2016/03/17
 # Copyright 2026 under the GNU GPL3 License
 # This script requires yad to run
-# Last update 2026/03/17
+# Last update 2026/03/18
 
 DIALOG700="`which yad` --window-icon=accessories-image-viewer --width=800 --height=600 --center"
 DIALOG="`which yad` --window-icon=accessories-image-viewer --width=450 --height=200 --center"
@@ -29,6 +29,16 @@ elif [ "$PICKFILE" = "" ]; then
 else
 
 	feh --no-fehbg --bg-scale $PICKFILE
+	RES=`cat ~/.fehbg | grep feh`
+	if [ "$RES" != "" ]; then
+		rm -f ~/.fehbg
+		echo "feh restore exist, removing old one..."
+	fi
+		echo "feh restore missing, creating new one..."
+		echo "#!/bin/bash" >> ~/.fehbg
+		echo "feh --no-fehbg --bg-scale $PICKFILE" >> ~/.fehbg
+		echo "exit 0" >> ~/.fehbg
+		chmod +x ~/.fehbg
 	#$DIALOG $TITLE"$TITLETEXT" $MSGBOX $TEXT"Done"
 	exit 0
 fi

@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Created by Paweł "pavroo" Pijanowski 2016/03/18
+# Copyright 2026 under the GNU GPL3 License
+# This script requires yad to run
+# Last update 2026/03/19
+
+RES=`cat ~/.fehbg | grep feh`
+if [ "$RES" != "" ]; then
+	echo "feh restore exist, loading present one..."
+	~/.fehbg
+else
+	#touch ~/.sparky-feh-restore
+	echo "feh restore missing, loading default one..."
+	echo "#!/bin/bash" >> ~/.fehbg
+	echo "feh --no-fehbg --bg-scale /opt/artwork/sparky-base.jpg" >> ~/.fehbg
+	echo "exit 0" >> ~/.fehbg
+	chmod +x ~/.fehbg
+	feh --no-fehbg --bg-scale /opt/artwork/sparky-base.jpg
+fi
+
+exit 0
