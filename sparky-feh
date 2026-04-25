@@ -3,7 +3,7 @@
 # Created by Paweł "pavroo" Pijanowski 2016/03/17
 # Copyright 2026 under the GNU GPL3 License
 # This script requires yad to run
-# Last update 2026/03/18
+# Last update 2026/04/25
 
 DIALOG700="`which yad` --window-icon=accessories-image-viewer --width=800 --height=600 --center"
 DIALOG="`which yad` --window-icon=accessories-image-viewer --width=450 --height=200 --center"
@@ -14,7 +14,7 @@ FILESELECTION="--file "
 FILTER="--file-filter"
 OKEXIT=" --button=Ok:0 --button=Exit:1 "
 MSGBOX=" --button=Ok:0 "
-PREVIEW=" --add-preview"
+PREVIEW=" --add-preview --large-preview"
 
 PICKFILE=`$DIALOG700 $TITLE"Pick Image to set as Wallpaper" $OKEXIT $FILESELECTION $PREVIEW $FILTER="Image File: png, jpg, jpeg|*.png *.jpg *.jpeg"`
 
